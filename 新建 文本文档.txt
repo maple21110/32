@@ -1,0 +1,39 @@
+int main(int argc, char *argv[])
+
+int fd,fd1;//文件描述符
+//打开
+
+fd = open("1. txt",0_RDWR | 0_CREAT, 0664) ;//110 110 100
+fd1 = open ("2.txt",O_RDWR | O_CREAT, 0664);
+if(-1 == fd){
+//打开失败
+perror("open fail\n");
+return -1;
+
+}
+
+printf("fd is %d\n",fd);
+printf("fdl is %d\n",fdl);
+/关闭
+
+close(fd);
+close(fd1);
+printf("fd is %d\n",fd);
+
+size t ret;
+char buf [1024] = {0};
+ret = read(fd,buf,8);
+
+if(ret == -1) {
+
+perror("read fail\n");
+return -1;
+
+}
+
+printf("%s\n",buf);
+/关闭
+
+close(fd);
+
+return 0;
